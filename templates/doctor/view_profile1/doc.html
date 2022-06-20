@@ -1,0 +1,77 @@
+
+{% extends "basic.html" %}
+{% load static %}
+
+ 
+	{% block head %}
+
+
+  <link rel="stylesheet" href="{% static 'doctor/view_profile1/forms.css' %}">
+  <link rel="stylesheet" href="{% static 'doctor/view_profile1/responsive.css' %}">
+  <!---
+  <link rel="stylesheet" href="{% static 'doctor/view_profile/base.css' %}">
+  -->
+  <link rel="stylesheet" href="{% static 'doctor/view_profile1/w3.css' %}">
+  <link rel="stylesheet" href="{% static 'doctor/view_profile1/styles.css' %}">
+
+
+{% endblock %}
+
+
+
+
+{% block body %}
+
+<div class="ruby">
+<div class="rr">
+<div class="w3-container">
+  
+ 
+  <div class="w3-card-4" style="width:50%;">
+    <header class="w3-container w3-blue">
+     <div class="rrr">
+      <h1> Doctor Profile </h1>
+    </header>
+
+    <div class="w3-container">
+      <p>Name&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp : {{duser.doctor.name}}<br><br>
+       Email&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp : {{duser.email}} <br> <br>
+       Gender&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp : {{duser.doctor.gender}}<br> <br>
+       Qualification &nbsp&nbsp: {{duser.doctor.qualification}}<br> <br>
+       Specialization : {{duser.doctor.specialization}}<br><br>
+       Rating&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp : {{duser.doctor.rating}}/5</p>
+    </div>
+
+    
+  </div>
+  </div>
+</div>
+</div>
+<div class="container">
+        
+    <br>   
+<h2>Ratings and Reviews</h2>
+<br>
+        <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Patient name</th>
+                    <th>Ratings</th>
+                    <th>Reviews</th>
+                  </tr>
+                </thead>
+                <tbody>
+                        {% for i in rate %}
+               <tr>
+                    <td>{{i.patient.name}}</td>
+                    <td>{{i.rating}}/5</td>
+                    <td>{{i.review}}</td>
+               </tr>
+                 
+     {% endfor %}
+                </tbody>
+              </table>
+</div>
+</div>
+{% endblock %}
+
