@@ -1,0 +1,112 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>ALFEBRO</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+
+  <link href="{% static 'homepage/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'homepage/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+
+  <link href="{% static 'homepage/vendor/aos/aos.css' %}" rel="stylesheet">
+  
+  <link href="{% static 'homepage/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <link href="{% static 'homepage/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+
+  <link href="{% static 'homepage/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+
+  <link href="{% static 'homepage/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+
+  <link href="{% static 'homepage/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <!-- Template Main CSS File -->
+  <link href="{% static 'homepage/css/style.css' %}" rel="stylesheet">
+
+  <script src="{% static 'jquery.js' %}"></script> 
+  
+  <!-- =======================================================
+  * Template Name: BizLand - v3.1.0
+  * Template URL: https://bootstrapmade.com/bizland-bootstrap-business-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  
+  {% block head %} 
+
+
+  {% endblock %}
+</head>
+
+<body>
+
+
+
+
+
+ 
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="{% url 'home' %}">AlFebRo<span>.</span></a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt=""></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="{% url 'home' %}">Home</a></li>
+          <!--<li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#team">Doctors</a></li>                 
+          <li><a class="nav-link scrollto" href="#footer">Contact</a></li>-->
+
+        {% if user.is_authenticated %}
+        {% if user.patient %}
+          <li><a class="nav-link scrollto" href="{% url 'patient_ui' %}">profile</a></li>                 
+          <li><section id ="robo"><a class="btn-get-started scrollto" href="{% url 'logout' %}">Logout</a></section></li>       
+        {% endif %}
+
+        {% if user.doctor %}
+          <li><a class="nav-link scrollto" href="{% url 'doctor_ui' %}">profile</a></li>                 
+          <li><section id ="robo"><a class="btn-get-started scrollto" href="{% url 'logout' %}">Logout</a></section></li>        
+        {% endif %}
+        {% else %}
+         <li><section id ="robo"><a class="btn-get-started scrollto" href="{% url 'sign_in_patient' %}">Sign in</a></section></li>
+         <li><section id ="robo"><a class="btn-get-started scrollto" href="{% url 'signup_patient' %}">Sign up</a></section></li>
+        {% endif %}
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+          
+    </div>
+  </header><!-- End Header -->
+  
+    {% block body %}
+
+    {% endblock %}
+
+   <!-- Vendor JS Files -->
+  <script src="{% static 'homepage/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'homepage/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'homepage/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'homepage/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'homepage/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'homepage/vendor/purecounter/purecounter.js' %}"></script>
+  <script src="{% static 'homepage/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'homepage/vendor/waypoints/noframework.waypoints.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'homepage/js/main.js' %}"></script>
+</body>
+
+</html>
