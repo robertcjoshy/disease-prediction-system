@@ -3,7 +3,7 @@
 
 # How To run
 Install postgreSQL.  
-Create a Data Base on PostgreSQL named 'alfebro'.
+Create a Data Base on PostgreSQL named 'alfebro'..
 Now follow the below steps.
 
 steps:
