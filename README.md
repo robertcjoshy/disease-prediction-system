@@ -17,7 +17,7 @@ Dataset used - https://www.kaggle.com/neelima98/disease-prediction-using-machine
 
 # Some Sceenshots of This Webapp -
 
-https://github.com/robertcjoshy/disease-prediction-system/blob/main/screenshots/screen-1.png
+![](https://github.com/robertcjoshy/disease-prediction-system/blob/main/screenshots/screen-1.png)
 https://github.com/robertcjoshy/disease-prediction-system/blob/main/screenshots/screen-2.png
 https://github.com/robertcjoshy/disease-prediction-system/blob/main/screenshots/screen-4.png
 https://github.com/robertcjoshy/disease-prediction-system/blob/main/screenshots/screen-6.png
