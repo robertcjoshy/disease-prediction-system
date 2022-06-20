@@ -16,10 +16,3 @@ steps:
 Dataset used - https://www.kaggle.com/neelima98/disease-prediction-using-machine-learning
 
 # Some Sceenshots of This Webapp -
-
-![](https://github.com/robertcjoshy/disease-prediction-system/blob/main/screenshots/screen-1.png)
-![](https://github.com/anuj-glitch/Disease-Prediction-using-Django-and-machine-learning/blob/master/screenshots/Capture2.PNG)
-![](https://github.com/anuj-glitch/Disease-Prediction-using-Django-and-machine-learning/blob/master/screenshots/Capture3.PNG)
-![](https://github.com/anuj-glitch/Disease-Prediction-using-Django-and-machine-learning/blob/master/screenshots/Capture4.PNG)
-![](https://github.com/anuj-glitch/Disease-Prediction-using-Django-and-machine-learning/blob/master/screenshots/Capture5.PNG)
-
