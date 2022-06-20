@@ -1,0 +1,128 @@
+{% extends "basic.html" %}
+{% load static %}
+
+ 
+    {% block head %}
+    <link rel="stylesheet" href="{% static 'patient/patient_ui/w3.css' %}">
+    <link rel="stylesheet" href="{% static 'patient/patient_ui/style.css' %}">
+   
+{% endblock %}
+
+
+
+
+{% block body %}
+
+
+<div class="main">
+
+<br>
+<br>
+<br>
+
+<div class="container mt-2 mb-3">
+<!---
+<center><h2>Patient Profile</h2>
+</center><br>
+-->
+
+
+
+
+    <div class="row">
+        <div class="col" >
+
+            <div class="card" style="width:350px">
+                <img class="card-img-top" src="{% static 'patient/patient_ui/patient.png' %}" alt="Card image" style="width:100%;">
+                <div class="card-body">
+                  <h4 class="card-title">Patient name : {{puser.patient.name}}</h4>
+                  <p class="card-text">Patient ID - {{puser.patient.user_id}}</p>
+                  <p class="card-text">Patient email - {{puser.email}}</p>
+                  <a href="{% url 'pviewprofile' puser.username %}" class="btn btn-primary">View Profile</a>
+                </div>
+              </div>
+
+        </div>
+      
+
+
+
+
+        <div class="col" >
+               <div class="row">
+            
+              <div class="rob">
+<div class="w3-container">
+  
+
+  <div class="w3-card-4" style="width:70%;">
+    <header class="w3-container w3-blue"><br>
+     <div style="font-size: 20px; font-weight: 900">check disease based on your symptoms</div>
+      <a href="{% url 'checkdisease' %}">
+      <button class="robert w3-button w3-white w3-large">check disease</button></a>
+      
+    </header>
+
+
+  </div>
+</div>
+</div>
+<div>
+<br>
+<br>
+</div>
+<div class="hello">
+<div class="w3-container">
+  
+
+  <div class="w3-card-4" style="width:70%;">
+    <header class="w3-container w3-blue"><br>
+     <div style="font-size: 20px; font-weight: 900"> view your consultation <br>history</div>
+     <a href="{% url 'pconsultation_history' %}">
+      <button class="robert w3-button w3-white w3-large" style="">check history</button></a>
+      
+    </header>
+
+
+  </div>
+</div>
+</div>
+        
+      </div>
+    </div>
+  </div>
+
+               
+
+        </div>
+    </div>
+    </div>
+
+<script>
+
+
+  $(document).ready(function() {
+
+    $('#submit').click( function(event){
+  
+      $.ajax({
+          url :"{% url 'post_feedback' %}",
+          type : "POST",
+          data : { feedback : $('#feedback').val(),
+          csrfmiddlewaretoken : $('input[name=csrfmiddlewaretoken]').val()
+         },
+  
+          success : function(data){
+              alert(data);
+          }
+      });
+  
+  
+  });
+      
+   });
+
+</script>
+
+  
+{% endblock %}
